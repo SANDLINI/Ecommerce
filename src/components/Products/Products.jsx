@@ -82,7 +82,7 @@ export const Products = () => {
                     height: "30px",
                   }}
                 >
-                  Add To Cart
+                  see details
                 </Button>
               </Card>
             </Box>
