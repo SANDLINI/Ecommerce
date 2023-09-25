@@ -72,7 +72,7 @@ export const Products = () => {
                 </CardContent>
                 <Button
                   onClick={() => {
-                    handleAddToCart(items);
+                    navToProduct(`/${items.id}`);
                   }}
                   variant="contained"
                   sx={{
