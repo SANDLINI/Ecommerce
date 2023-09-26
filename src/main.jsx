@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { App } from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import store from "./Store/store.jsx";
+import store from "./store/store.jsx";
 import { Provider } from "react-redux";
 import { cartTotal } from "./features/CartSlice.jsx";
 
