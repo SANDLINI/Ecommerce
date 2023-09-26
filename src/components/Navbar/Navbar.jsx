@@ -1,15 +1,13 @@
-import { Box, AppBar, Toolbar, Button, Typography } from "@mui/material";
+import { Box, AppBar, Toolbar,  Typography } from "@mui/material";
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "../../Images/logo.png";
 import { useSelector } from "react-redux";
-import { TypeSpecimenOutlined } from "@mui/icons-material";
 
 export const Navbar = () => {
   const ShowCartItems = useSelector((state) => state.cart.cartItems);
 
-  const navToLogin = useNavigate();
   return (
     <>
       <Box>
