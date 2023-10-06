@@ -2,23 +2,15 @@ import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import styles from "./Products.module.css";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/CartSlice";
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((result) => setProducts(result));
   }, []);
-
-  const handleAddToCart = (items) => {
-    dispatch(addToCart(items));
-  };
 
   const navToProduct = useNavigate();
 
@@ -41,10 +33,12 @@ export const Products = () => {
         {products.map((items) => {
           return (
             <Box
+              className={styles.mainBox}
               key={items.id}
               sx={{ width: { xs: "49%", sm: "40%", md: "30%", lg: "20%" } }}
             >
               <Card
+                className={styles.CardContent}
                 sx={{
                   mb: { xs: 3 },
                   cursor: "pointer",
@@ -66,6 +60,7 @@ export const Products = () => {
                       className={styles.image}
                     />
                   </Box>
+
                   <Typography>{items.title.slice(0, 12)}...</Typography>
                   <Typography>Rating: {items.rating.rate}</Typography>
                   <Typography>Price:$ {items.price}</Typography>
@@ -82,7 +77,7 @@ export const Products = () => {
                     height: "30px",
                   }}
                 >
-                  see details
+                   Details
                 </Button>
               </Card>
             </Box>
