@@ -16,12 +16,12 @@ export const CartSlice = createSlice({
         (item) => item.id === action.payload.id
       );
 
-      if (itemIndex >= 0) {
-        state.cartItems[itemIndex].quantity += 1;
-        localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-      } else {
+      if (itemIndex == -1) {
         const tempProduct = { ...action.payload, quantity: 1 };
         state.cartItems.push(tempProduct);
+        localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+      } else {
+        state.cartItems[itemIndex].quantity += 1;
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       }
     },
