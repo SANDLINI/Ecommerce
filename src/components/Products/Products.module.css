@@ -3,8 +3,5 @@
     height: 150px;
 }
 
-.mainBox :hover {
-    transform: scale(1.02);
-    transition-duration: 150ms;
-}
+
 

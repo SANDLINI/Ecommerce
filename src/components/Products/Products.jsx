@@ -33,12 +33,19 @@ export const Products = () => {
         {products.map((items) => {
           return (
             <Box
-              className={styles.mainBox}
               key={items.id}
-              sx={{ width: { xs: "49%", sm: "40%", md: "30%", lg: "20%" } }}
+              sx={{
+                width: {
+                  xs: "49%",
+                  sm: "40%",
+                  md: "30%",
+                  lg: "20%",
+                  "&:hover": { transform: "scale(1.05)" },
+                  transitionDuration: "100ms",
+                },
+              }}
             >
               <Card
-                className={styles.CardContent}
                 sx={{
                   mb: { xs: 3 },
                   cursor: "pointer",
@@ -77,7 +84,7 @@ export const Products = () => {
                     height: "30px",
                   }}
                 >
-                   Details
+                  Details
                 </Button>
               </Card>
             </Box>
